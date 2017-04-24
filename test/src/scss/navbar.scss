@@ -1,4 +1,7 @@
 $navbar-button-font-size: 20px;
+$navbar-button-color: rgba(0, 200, 200, 1);
+$navbar-button-bg-color: transparent;
+$navbar-button-border: 1px solid lightblue;
 
 .navbar {
   display: flex;
@@ -8,4 +11,7 @@ $navbar-button-font-size: 20px;
 .navbar-button {
   flex: 1;
   font-size: $navbar-button-font-size;
+  background-color: $navbar-button-bg-color;
+  color: $navbar-button-color;
+  border: $navbar-button-border;
 }
