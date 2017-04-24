@@ -8,9 +8,9 @@ class Navbar extends Component {
 
   render() {
     return (
-      <div class='navbar'>
+      <div className='navbar'>
         {
-          this.buttons.map(x => <button>{x}</button>)
+          this.buttons.map(x => <button className='navbar-button'>{x}</button>)
         }
       </div>
     );

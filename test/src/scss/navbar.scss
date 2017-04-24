@@ -1,5 +1,11 @@
-$button-font-size: 20px;
+$navbar-button-font-size: 20px;
 
-button {
-  font-size: $button-font-size;
+.navbar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.navbar-button {
+  flex: 1;
+  font-size: $navbar-button-font-size;
 }
