@@ -7,6 +7,9 @@ $navbar-button-border: 1px solid lightblue;
   display: flex;
   flex-direction: row;
   width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .navbar-button {
   flex: 1;

@@ -1,1 +1,8 @@
-@import './navbar.scss';
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+@import 'theme/all';
+@import 'components/all';

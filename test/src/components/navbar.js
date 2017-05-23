@@ -10,7 +10,7 @@ class Navbar extends Component {
     return (
       <div className='navbar'>
         {
-          this.buttons.map(x => <button className='navbar-button'>{x}</button>)
+          this.buttons.map(x => <button key={x} className='navbar-button'>{x}</button>)
         }
       </div>
     );
