@@ -1,20 +1,31 @@
-$navbar-button-font-size: 20px;
-$navbar-button-color: rgba(0, 200, 200, 1);
+$navbar-button-font-size: map-get($font-sizes, regular);
+$navbar-button-color: rgba(0, 0, 0, 1);
 $navbar-button-bg-color: transparent;
-$navbar-button-border: 1px solid lightblue;
+$navbar-button-border: none;
+$navbar-bg-color: white;
 
 .navbar {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
+  padding: 10px 10%;
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  background-color: $navbar-bg-color;
 }
+
+.navbar-inner {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
 .navbar-button {
   flex: 1;
   font-size: $navbar-button-font-size;
+  font-weight: map-get($font-weights, regular);
   background-color: $navbar-button-bg-color;
   color: $navbar-button-color;
   border: $navbar-button-border;
+  margin: 0 5px;
+  letter-spacing: map-get($letter-spacing, wide);
 }

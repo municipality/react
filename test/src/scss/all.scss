@@ -4,5 +4,9 @@ body {
   font-family: sans-serif;
 }
 
+:focus {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+
 @import 'theme/all';
 @import 'components/all';
