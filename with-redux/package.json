@@ -1,0 +1,26 @@
+{
+  "name": "with-redux",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.1",
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.4.0",
+    "node-sass": "^4.5.2",
+    "nodemon": "^1.11.0",
+    "react-scripts": "0.9.5"
+  },
+  "scripts": {
+    "start": "build-scss & node ./www",
+    "debug": "concurrently \"npm run watch-scss\" \"react-scripts start\"",
+    "watch-scss": "nodemon -e scss -x \"npm run build-scss\"",
+    "build-scss": "node-sass --include-path scss src/scss/all.scss src/app.css",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

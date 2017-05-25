@@ -1,0 +1,10 @@
+$bg-image-path: '/intro-image.jpg';
+
+.intro {
+  height: 100vh;
+  width: 100vw;
+  background-color: map-get($colors, base-color);
+  background-image: url($bg-image-path);
+  background-position: center;
+  background-size: cover;
+}
