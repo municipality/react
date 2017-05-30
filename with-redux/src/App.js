@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import Navbar from './components/navbar';
-import Intro from './components/intro';
+import Homepage from './Homepage';
 import { Switch, Route } from 'react-router-dom';
 
 const Main = () => (
   <main>
     <Switch>
-      <Route exact path='/' component={Intro}/>
+      <Route exact path='/' component={Homepage}/>
     </Switch>
   </main>
 );

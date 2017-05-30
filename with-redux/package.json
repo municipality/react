@@ -3,10 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "es6-promise": "^4.1.0",
+    "flickrapi": "^0.6.0",
+    "isomorphic-fetch": "^2.2.1",
+    "jquery": "^3.2.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "concurrently": "^3.4.0",
@@ -16,7 +22,7 @@
   },
   "scripts": {
     "start": "build-scss & node ./www",
-    "debug": "concurrently \"npm run watch-scss\" \"react-scripts start\"",
+    "debug": "concurrently \"npm run watch-scss\" \"react-scripts start\" \"node ./www\"",
     "watch-scss": "nodemon -e scss -x \"npm run build-scss\"",
     "build-scss": "node-sass --include-path scss src/scss/all.scss src/app.css",
     "build": "react-scripts build",
