@@ -1,0 +1,8 @@
+$photo-panel-width: 45%;
+$photo-panel-height: 300px;
+
+.photo-panel {
+  width: $photo-panel-width;
+  padding-top: $photo-panel-width;
+  margin: 5px;
+}

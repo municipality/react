@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const Flickr = require('flickrapi');
+const albumName = '[React]Homepage';
 
 var flickrOptions = {
   api_key : "f020644253602c840d063034581dabf6",
@@ -29,8 +30,37 @@ router.get('/getphotopanels', function(req, res) {
     user_id: flickrOptions.user_id,
   }, function(err, result) {
     if(!err) {
-        console.log(result);
-        res.json(result);
+        var resultset = result.photosets.photoset;
+        var set = {};
+        for(var i = 0; i < resultset.length; i++) {
+          console.log(resultset[i].title);
+          if(resultset[i].title['_content'].toLowerCase() === albumName.toLowerCase()) {
+            set = resultset[i];
+            break;
+          }
+        }
+        flickr.photosets.getPhotos({
+          api_key: flickrOptions.api_key,
+          user_id: flickrOptions.user_id,
+          photoset_id: set.id
+        }, function(err, photosetResult) {
+          if(!err) {
+            var ret = photosetResult.photoset.photo.map(function(photo, i) {
+              console.log(photo);
+              var farm = photo.farm;
+              var id = photo.id;
+              var server = photo.server;
+              var secret = photo.secret;
+              return {
+                id: i,
+                src: 'https://farm' + farm + '.staticflickr.com/' + server + '/' +
+                     id + '_' + secret + '_z.jpg'
+              }
+            });
+            res.json(ret);
+          }
+        });
+
     }
 
   });

@@ -6,21 +6,6 @@ import PhotoPanelList from '../components/PhotoPanelList';
 import {fetchPhotoPanels} from '../actions';
 import React, {Component} from 'react';
 
-let photoPanels = [{
-  id: 1,
-  src: 'url(intro-image.jpg)',
-  text: ''
-}];
-
-const getPhotoPanels = () => {
-  return [{
-    id: 1,
-    src: 'url(intro-image.jpg)',
-    text: ''
-  }];
-
-}
-
 class PhotoPanelsContainer extends Component {
   componentDidMount() {
     const {dispatch} = this.props;

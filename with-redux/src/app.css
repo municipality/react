@@ -36,3 +36,14 @@ body {
   background-image: url("/intro-image.jpg");
   background-position: center;
   background-size: cover; }
+
+.photo-panel-list {
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center; }
+
+.photo-panel {
+  width: 45%;
+  padding-top: 45%;
+  margin: 5px; }
