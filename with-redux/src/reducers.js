@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import {
-  LOAD_PHOTO_PANEL, RECEIVE_PHOTO_PANEL
+  LOAD_PHOTO_PANEL, RECEIVE_PHOTO_PANEL,
+  CHANGE_ROUTE
 } from './actions'
 
 function photopanels(state = {
@@ -25,5 +26,19 @@ function photopanels(state = {
   }
 }
 
-const PhotoPanelsReducer = combineReducers({photopanels});
-export default PhotoPanelsReducer;
+function switchroute(state = {
+  path: '/'
+}, action) {
+  switch(action.type) {
+    case CHANGE_ROUTE: {
+      return Object.assign({}, state, {
+        active: action.path
+      });
+    }
+    default:
+      return state;
+  }
+}
+
+const reducers = combineReducers({photopanels, switchroute});
+export default reducers;

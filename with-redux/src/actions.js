@@ -11,7 +11,6 @@ export function loadPhotoPanels(selection) {
 }
 
 export function receivePhotoPanels(selection, json) {
-  debugger
   return {
     type: RECEIVE_PHOTO_PANEL,
     selection,
@@ -37,5 +36,14 @@ export function fetchPhotoPanels(selection = 'all') {
     return fetch('http://localhost:8000/api/getphotopanels', options)
       .then(response => response.json())
       .then(json => dispatch(receivePhotoPanels(selection, json)));
+  }
+}
+
+export const CHANGE_ROUTE = 'CHANGE_ROUTE';
+
+export function changeRoute(route = '/') {
+  return {
+    type: CHANGE_ROUTE,
+    path: route
   }
 }

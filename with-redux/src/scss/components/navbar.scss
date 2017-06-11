@@ -1,8 +1,8 @@
-$navbar-button-font-size: map-get($font-sizes, regular);
-$navbar-button-color: rgba(0, 0, 0, 1);
+$navbar-button-font-size: map-get($font-sizes, large);
+$navbar-button-color: map-get($colors, base-color);
 $navbar-button-bg-color: transparent;
 $navbar-button-border: none;
-$navbar-bg-color: white;
+$navbar-bg-color: transparent;
 
 .navbar {
   padding: 10px 10%;
@@ -20,6 +20,7 @@ $navbar-bg-color: white;
 }
 
 .navbar-button {
+  position: relative;
   flex: 1;
   font-size: $navbar-button-font-size;
   font-weight: map-get($font-weights, regular);
@@ -28,4 +29,28 @@ $navbar-bg-color: white;
   border: $navbar-button-border;
   margin: 0 5px;
   letter-spacing: map-get($letter-spacing, wide);
+
+  &.active:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: $navbar-button-color;
+    animation-name: 'text-blinker';
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    visibility: hidden;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes text-blinker {
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
 }

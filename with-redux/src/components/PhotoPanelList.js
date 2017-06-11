@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react'
 import PhotoPanel from './PhotoPanel'
 
 const PhotoPanelList = ({panels}) => {
-  debugger
   return (
     <div className='photo-panel-list'>
       {/* Map each panels object to a PhotoPanel */}
