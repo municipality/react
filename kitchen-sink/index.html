@@ -1,0 +1,29 @@
+<html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div class="navbar-animation">
+      <div class="navbar-button-container">
+        <button class="navbar-animation-button" onclick="clicked(this)">Button 1</button>
+      </div>
+      <div class="navbar-button-container">
+        <button class="navbar-animation-button" onclick="clicked(this)">Button 2</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    var button = null;
+    function clicked(me) {
+      if(button) {
+        button.classList = "navbar-animation-button";
+      }
+      me.classList += " clicked animation";
+      button = me;
+    }
+  </script>
+</html>
