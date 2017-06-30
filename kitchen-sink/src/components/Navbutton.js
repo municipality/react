@@ -32,12 +32,15 @@ class Navbutton extends Component {
 
   render() {
     return (
-      <div className="navbar-animation">
-        <div className="navbar-button-container">
-          <button className="navbar-animation-button" onClick={this.handleClick}>Button 1</button>
-        </div>
-        <div className="navbar-button-container">
-          <button className="navbar-animation-button" onClick={this.handleClick}>Button 2</button>
+      <div>
+        <div className='title'>Animation Navbar</div>
+        <div className="navbar-animation">
+          <div className="navbar-button-container">
+            <button className="navbar-animation-button" onClick={this.handleClick}>Button 1</button>
+          </div>
+          <div className="navbar-button-container">
+            <button className="navbar-animation-button" onClick={this.handleClick}>Button 2</button>
+          </div>
         </div>
       </div>
     )

@@ -92,45 +92,49 @@ class Slider extends Component {
       image3 = images[(active + images.length + 3) % images.length];
       image4 = images[(active + images.length + 4) % images.length];
       return (
-        <div className='slider'>
-          <div className='arrow left-arrow' onClick={this.handleLeftArrowClick.bind(this)}></div>
-          <div className='arrow right-arrow' onClick={this.handleRightArrowClick.bind(this)}></div>
-          {/* <div className='slider-inner'> */}
-          {/* retrieve correct image by 'active' counter */}
-          {/* 5 pictures seen at once:
-              leftoff left center right rightoff
-             */}
-          {
-            <div className={classes + ' leftoff'}
-              alt={'slider-image' + image0.id} style={{
-                backgroundImage: 'url(' + image0.src + ')'
-              }} key={image0.id}></div>
-          }
-          {
-            <div className={classes + ' left'}
-              alt={'slider-image' + image1.id} style={{
-                backgroundImage: 'url(' + image1.src + ')'
-              }} key={image1.id}></div>
-          }
-          {
-            <div className={classes + ' center'}
-              alt={'slider-image' + image2.id} style={{
-                backgroundImage: 'url(' + image2.src + ')'
-              }} key={image2.id}></div>
-          }
-          {
-            <div className={classes + ' right'}
-              alt={'slider-image' + image3.id} style={{
-                backgroundImage: 'url(' + image3.src + ')'
-              }} key={image3.id}></div>
-          }
-          {
-            <div className={classes + ' rightoff'}
-              alt={'slider-image' + image4.id} style={{
-                backgroundImage: 'url(' + image4.src + ')'
-              }} key={image4.id}></div>
-          }
-          {/* </div> */}
+        <div>
+          <div className='title'>Slider</div>
+
+          <div className='slider'>
+            <div className='arrow left-arrow' onClick={this.handleLeftArrowClick.bind(this)}></div>
+            <div className='arrow right-arrow' onClick={this.handleRightArrowClick.bind(this)}></div>
+            {/* <div className='slider-inner'> */}
+            {/* retrieve correct image by 'active' counter */}
+            {/* 5 pictures seen at once:
+                leftoff left center right rightoff
+               */}
+            {
+              <div className={classes + ' leftoff'}
+                alt={'slider-image' + image0.id} style={{
+                  backgroundImage: 'url(' + image0.src + ')'
+                }} key={image0.id}></div>
+            }
+            {
+              <div className={classes + ' left'}
+                alt={'slider-image' + image1.id} style={{
+                  backgroundImage: 'url(' + image1.src + ')'
+                }} key={image1.id}></div>
+            }
+            {
+              <div className={classes + ' center'}
+                alt={'slider-image' + image2.id} style={{
+                  backgroundImage: 'url(' + image2.src + ')'
+                }} key={image2.id}></div>
+            }
+            {
+              <div className={classes + ' right'}
+                alt={'slider-image' + image3.id} style={{
+                  backgroundImage: 'url(' + image3.src + ')'
+                }} key={image3.id}></div>
+            }
+            {
+              <div className={classes + ' rightoff'}
+                alt={'slider-image' + image4.id} style={{
+                  backgroundImage: 'url(' + image4.src + ')'
+                }} key={image4.id}></div>
+            }
+            {/* </div> */}
+          </div>
         </div>
       );
     }
