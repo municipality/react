@@ -33,7 +33,7 @@ router.get('/getphotopanels', function(req, res) {
         var resultset = result.photosets.photoset;
         var set = {};
         for(var i = 0; i < resultset.length; i++) {
-          console.log(resultset[i].title);
+          // console.log(resultset[i].title);
           if(resultset[i].title['_content'].toLowerCase() === albumName.toLowerCase()) {
             set = resultset[i];
             break;
@@ -46,7 +46,7 @@ router.get('/getphotopanels', function(req, res) {
         }, function(err, photosetResult) {
           if(!err) {
             var ret = photosetResult.photoset.photo.map(function(photo, i) {
-              console.log(photo);
+              // console.log(photo);
               var farm = photo.farm;
               var id = photo.id;
               var server = photo.server;
