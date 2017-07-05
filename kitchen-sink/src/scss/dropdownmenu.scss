@@ -1,0 +1,15 @@
+$dropdownmenu-width: 200px;
+$dropdownmenu-item-height: 30px;
+.dropdownmenu {
+  width: $dropdownmenu-width;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.dropdownmenu-item {
+  width: 100%;
+  height: 30px;
+  border: 1px solid rgba(200, 200, 200, .5);
+}

@@ -1,5 +1,6 @@
 import Navbutton from './components/Navbutton';
 import Slider from './components/Slider';
+import DropdownMenu from './components/DropdownMenu';
 
 const componentsList = [
   {
@@ -9,6 +10,10 @@ const componentsList = [
   {
     name: 'Slider',
     comp: Slider
+  },
+  {
+    name: 'Dropdown Menu',
+    comp: DropdownMenu
   }
 ];
 

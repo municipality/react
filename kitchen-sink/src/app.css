@@ -224,6 +224,18 @@ button:focus {
 .right-arrow {
   right: 0; }
 
+.dropdownmenu {
+  width: 200px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center; }
+
+.dropdownmenu-item {
+  width: 100%;
+  height: 30px;
+  border: 1px solid rgba(200, 200, 200, 0.5); }
+
 body {
   margin: 0;
   padding: 0; }
