@@ -6,7 +6,7 @@ class DropdownMenu extends Component {
     this.state = {
       items: ['Item1', 'Item2', 'Item3', 'Item4'],
       hover: false,
-      selected: 'Select One..'
+      selected: -1
     };
   }
 
@@ -19,51 +19,37 @@ class DropdownMenu extends Component {
   handleExit() {
     this.setState({
       hover: false
-    })
+    });
   }
   handleSelect(option) {
-
+    this.setState({
+      hover: false,
+      selected: option
+    });
   }
 
   render() {
-    //If not in hovering state
-    // if(!this.state.hover) {
-    //   return (
-    //     <div>
-    //       <div className='title'>Dropdown Menu</div>
-    //       <div className='dropdownmenu' onMouseEnter={this.handleEnter.bind(this)}>
-    //         <div className='dropdownmenu-item'>{this.state.selected}</div>
-    //       </div>
-    //     </div>
-    //
-    //   );
-    // }
-    // return (
-    //   <div>
-    //     <div className='title'>Dropdown Menu</div>
-    //     <div className='dropdownmenu-hovered' onMouseLeave={this.handleExit.bind(this)}>
-    //
-    //     </div>
-    //   </div>
-    // );
-
     return (
       <div>
         <div className='title'>Dropdown Menu</div>
-        <div className='dropdownmenu' onMouseEnter={this.handleEnter.bind(this)} onMouseLeave={this.handleExit.bind(this)}>
-          {this.state.hover ? (
-            this.state.items.map(obj => (
-              <div className='dropdownmenu-item'>
+        <div className='dropdownmenu-container' onMouseEnter={this.handleEnter.bind(this)} onMouseLeave={this.handleExit.bind(this)}>
+          <div className='dropdownmenu-item chosen'>
+            {this.state.selected > -1 ? this.state.items[this.state.selected] : 'Select One..'}
+          </div>
+
+          <div className='dropdownmenu'
+            // Have to dynamically find height of dropdownmenu
+             style={this.state.hover ? {maxHeight : this.state.items.length * 30 + 'px'} : {}}>
+            {this.state.items.map((obj, index) => (
+              <div key={index}
+                className={index === this.state.selected ? 'dropdownmenu-item dropdownmenu-item-selected' : 'dropdownmenu-item'}
+                onClick={this.handleSelect.bind(this, index)}>
                 {obj}
               </div>
-            ))
-          ) : (
-            <div className='dropdownmenu-item'>
-              {this.state.selected}
-            </div>
-          )}
-
+            ))}
+          </div>
         </div>
+
       </div>
     )
 

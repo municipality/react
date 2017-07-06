@@ -5,6 +5,7 @@ $title-color: rgba(240,40,40, 1);
 body {
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
 }
 .title {
   font-size: 24px;
@@ -31,7 +32,6 @@ body {
   flex: 3;
   max-width: 200px;
   background-color: rgba(225,225,225, .3);
-  font-family: sans-serif;
   z-index: 1;
   padding-right: 4px;
   .sidebar-title {
